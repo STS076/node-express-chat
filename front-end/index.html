@@ -35,10 +35,19 @@
 			</div>
 		</div>
 		<div class="window-area">
+
+			<!-- onglets gauche -->
 			<div class="conversation-list">
 				<ul class="">
-					<li class="item"><a href="#"><i class="fa fa-list-alt"></i><span>Dashboard</span></a></li>
-					<li class="item active">
+					<li class="item" id="dashboard" onclick="showDash()"">
+						<a href=" #">
+						<i class="fa fa-list-alt"></i>
+						<span>
+							Dashboard
+						</span>
+						</a>
+					</li>
+					<li class="item " id="teamChat" onclick="showChat()">
 						<a href="#">
 							<i class="fa fa-user"></i>
 							<span>Team chat</span>
@@ -52,20 +61,38 @@
 						<i class="fa fa-circle online"></i>
 					</div>
 					<div class="name">
-						<span>John Doe</span>
+						<span id="chatUserName">Me</span>
 						<i class="fa fa-angle-down"></i>
 						<span class="availability">Available</span>
 					</div>
 
 				</div>
 			</div>
-			<div class="chat-area">
+
+			<!-- Chat -->
+			<div class="chat-area" id="myChat">
 				<div class="title"><b>Conversation title</b><i class="fa fa-search"></i></div>
 				<div class="chat-list">
-					<ul>
+					<ul id="addMessage">
+					</ul>
+				</div>
+				<div class="input-area">
+					<div class="input-wrapper">
+						<input type="text" value="" placeholder="Message here" id="newMessage">
+						<i class="fa fa-smile-o"></i>
+					</div>
+					<input type="button" value="Submit" class="send-btn" id="submit" onclick="save()">
+				</div>
+			</div>
+
+			<!-- dashboard -->
+			<div class="chat-area displaynone" id="myDash">
+				<div class="title"><b>My Dashboard</b><i class="fa fa-search"></i></div>
+				<!-- <div class="chat-list">
+					<ul id="addMessage">
 						<li class="me">
 							<div class="name">
-								<span class="">John Doe</span>
+								<span class="">Me</span>
 							</div>
 							<div class="message">
 								<p>Hello</p>
@@ -82,15 +109,11 @@
 							</div>
 						</li>
 					</ul>
-				</div>
-				<div class="input-area">
-					<div class="input-wrapper">
-						<input type="text" value="" placeholder="Message here">
-						<i class="fa fa-smile-o"></i>
-					</div>
-					<input type="button" value="Submit" class="send-btn">
-				</div>
+				</div> -->
+
 			</div>
+
+			<!-- onglets droits -->
 			<div class="right-tabs">
 				<ul class="tabs">
 					<li class="active">
@@ -102,7 +125,7 @@
 				<ul class="tabs-container">
 					<li class="active">
 						<ul class="member-list">
-							<li><span class="status online"><i class="fa fa-circle-o"></i></span><span>John Doe</span>
+							<li><span class="status online"><i class="fa fa-circle-o"></i></span><span>Me</span>
 							</li>
 							<li><span class="status online"><i class="fa fa-circle-o"></i></span><span>Christian
 									Smith</span></li>
@@ -115,6 +138,8 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="../back-end/main.js"></script>
 </body>
 
 </html>

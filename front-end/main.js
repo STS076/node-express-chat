@@ -12,3 +12,40 @@
         console.log(data);
     })
 })()
+
+let addMessage = document.getElementById("addMessage");
+let newMessage = document.getElementById("newMessage");
+let dashboard = document.getElementById("dashboard");
+let teamChat = document.getElementById("teamChat");
+let myDash = document.getElementById("myDash");
+let myChat = document.getElementById("myChat");
+let allMessages = []; 
+
+function save() {
+    if (newMessage.value != " ") {
+        addMessage.innerHTML += `<li class="me">
+        <div class="name">
+            <span class="">Me</span>
+        </div>
+        <div class="message">
+            <p>${newMessage.value}</p>
+            <span class="msg-time">5:00 pm</span>
+        </div>
+    </li>`
+    }
+}
+
+allMessages.push(newMessage); 
+console.log(allMessages)
+console.log(newMessage);
+
+function showDash() {
+    myChat.style.display = 'none';
+    myDash.style.display = 'block';
+}
+
+function showChat (){
+    myChat.style.display = 'block';
+    myDash.style.display = 'none';
+}
+
